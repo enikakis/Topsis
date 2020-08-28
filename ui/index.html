@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./index.css">
+  </head>
+  <body>
+    <div>
+      <div 
+        id="front" 
+        class="container">
+          <div id="start"  >
+            <h2 class="title text-center">
+            Topsis Method
+            </h2>
+            <h4 class="text-center">
+            By enikakis
+            </h4>
+            <button class="changeButton bigSpace" onClick="Ui.changeViewModeTo(1)">
+            Start
+            </button>
+          </div>
+          <div id="numberOfChoices">
+            <div class="topRight" onClick="Ui.changeViewModeTo(0)">
+              <span class="arrow arrow-left" ></span>
+            </div>
+            <h2 class="title, text-center">
+            Give Valeus
+            </h2>
+            <h4 class="text-center" style="margin-top: 70px;">
+            Give the number of choices:
+            </h4>
+            <input type="number" id="numberOfChoicesText" style="text-align: center;"> 
+            <div class="btn-div">
+                <button class="changeButton" onClick="goToNextAndSaveData(2)" style="margin-top: 50px;">Next</button>
+            </div>
+          </div>
+          <div id="choices">
+            <div class="topRight" onClick="Ui.changeViewModeTo(1)">
+              <span class="arrow arrow-left" ></span>
+            </div>
+            <h2 class="title, text-center">
+              Set choices
+            </h2>
+            <form id="formChoice" class="space" style="margin-right: 50px;">
+              <ol id="listChoice">
+                <label>name:</label>
+                <li> 
+                  <input type="text">
+                </li>
+              </ol>
+            </form>
+            <div class="btn-div">
+             <button class="changeButton" onClick="goToNextAndSaveData(3)" style="margin-top: 50px;">Next</button>
+            </div>
+          </div>
+          <div id="weightNumber">
+            <div class="topRight" onClick="Ui.changeViewModeTo(2)">
+              <span class="arrow arrow-left" ></span>
+            </div>
+            <h2 class="title, text-center">
+            Give Valeus
+            </h2>
+            
+            <h4 class="text-center" style="margin-top: 70px;">
+            Give the number of decision makers:
+            </h4>
+            <input type="number" id="numberOfDmsText" style="text-align: center;"> 
+             <h4 class="text-center" style="margin-top: 20px;">
+            Give the number of criteria:
+            </h4>
+            <input type="number" id="numberOfCriteriaText" style="text-align: center;"> 
+            <button class="changeButton" onClick="goToNextAndSaveData(4)">Next
+            </button>
+          </div>
+          <div id="critiria">
+            <div class="topRight" onClick="Ui.changeViewModeTo(3)">
+              <span class="arrow arrow-left" ></span>
+            </div>
+           <h2 class="title, text-center">Critiria</h2>
+           <form id="critiriaForm" class="space">
+            <div id="tableDiv">
+            </div>
+           </form>
+           <button class="changeButton" onClick="goToNextAndSaveData(5)" >
+             Next
+           </button>
+          </div>
+          <div id="matrix">
+            <div class="topRight" onClick="Ui.changeViewModeTo(4)">
+              <span class="arrow arrow-left" ></span>
+            </div>
+          <h2 class="title, text-center">Initialize Matrix</h2>
+           <form id="matrixForm"  class="space">
+            <div id="matrixDiv">
+            </div>
+           </form>
+           <button class="changeButton" onClick="goToNextAndSaveData(6)" >
+             Next
+           </button>
+          </div>
+          <div id="result">
+            <div class="topRight" onClick="Ui.changeViewModeTo(5)">
+              <span class="arrow arrow-left" ></span>
+            </div>
+            <h2 class="title, text-center">
+            Topsis analysis
+            </h2>
+            <div id="resultDiv" class="space">
+            </div>
+            <button class="changeButton" onClick="reset()">
+              Reset
+            </button>
+          </div>
+        </div>
+    </div>
+    <script src="/eel.js" type="text/javascript"></script>
+    <script src="./main.js" type="text/javascript"></script>
+  </body>
+</html>
+
