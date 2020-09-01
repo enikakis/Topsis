@@ -38,14 +38,54 @@ class Ui {
       }
     }
   }
+
+  //TODO back button
+  static backButton(number) {
+    // if(number === 1) {
+    //   this.cleanDiv(2);
+    // } else if ( number === 3) {
+    //   this.cleanDiv(4);
+    // } else if ( number === 4) {
+    //   this.cleanDiv(5);
+    // } else if ( number === 5) {
+    //   this.cleanDiv(6);
+    // }
+    // this.changeViewModeTo(number);
+  }
+
+  //TODO clean div funtion
+  static cleanDiv(index) {
+    // if (index === 0) {
+    //   let div = document.getElementsByClassName('giveValuesNew');
+    //   div.innerHTML = "eafsfasd";
+    //   div = document.getElementsByClassName('newTable');
+    //   div.innerHTML = "";
+    //   div = document.getElementsByClassName('newMatrix');
+    //   div.innerHTML = "";
+    //   div = document.getElementsByClassName('newResults');
+    //   div.innerHTML = "";
+    // } else if (index === 2) {
+    //   let div = document.getElementById('giveValuesNew');
+    //   div.innerHTML = "";
+    // } else if(index === 4) {
+    //   let div = document.getElementsByClassName('newTable');
+    //   div.innerHTML = "";
+    // } else if(index === 5) {
+    //   let div = document.getElementsByClassName('newMatrix');
+    //   div.innerHTML = "";
+    // } else if(index === 6) {
+    //   let div = document.getElementsByClassName('newResults');
+    //   div.innerHTML = "";
+    // } 
+  }
   
   //add row 
   static addChoice() {
     const list = document.getElementById('listChoice');
     let div = document.createElement("div");
-    div.innerHTML = ` <div style="margin-top: 10px;"><label>name:</label>
+    div.innerHTML = ` <div id="giveValuesNew" style="margin-top: 10px;"><label>name:</label>
               <li> 
-                <input type="text">
+                <input type="text" style="text-align: center;  border-bottom: 1px solid #000;">
               </li></div>`;
 
     list.appendChild(div);
@@ -62,7 +102,7 @@ class Ui {
   static initializeCritiriaView(number, numberOfCritiria) {
     let table = document.getElementById('tableDiv');
     let div = document.createElement("div");
-    let htmlCode = `<table class="tableClass" id="tableCr">
+    let htmlCode = `<table class="tableClass newTable" id="tableCr">
              <tr>
                <th>Choices</th>
                <th>Name</th>
@@ -96,7 +136,7 @@ class Ui {
   static initializeMatrix(choiceNames, critiriaNames) {
     let table = document.getElementById('matrixDiv');
     let div = document.createElement("div");
-    let htmlCode = `<table class="tableClass" id="matrixTable">
+    let htmlCode = `<table class="tableClass newMatrix" id="matrixTable">
              <tr>
                   <th>Values</th>`;
     let inputCode = ``;
@@ -119,7 +159,7 @@ class Ui {
   static initializeResults(results, names, indexes) {
     let table = document.getElementById('resultDiv');
     let div = document.createElement("div");
-    let htmlCode = `<table class="tableClass" id="resultTable">
+    let htmlCode = `<table class="tableClass newResults" id="resultTable">
     <tr> 
       <th>Rank</th>
       <th>Name</th>
@@ -247,10 +287,18 @@ function getResults() {
 
 //start from the beggining
 function reset() {
-  state = new State(null, null, null, null, null, null, null, null, null);
-  Ui.changeViewModeTo(0);
+  // state = new State(null, null, null, null, null, null, null, null, null);
+  // cleanDiv(0);
+  // Ui.changeViewModeTo(0);
+  location.reload()
+}
+
+//center the container
+function center() {
+
 }
 
 //init
 var state = new State(null, null, null, null, null, null, null, null, null);
 Ui.initView();
+center();

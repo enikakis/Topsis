@@ -21,7 +21,7 @@
             </button>
           </div>
           <div id="numberOfChoices">
-            <div class="topRight" onClick="Ui.changeViewModeTo(0)">
+            <div class="topRight hide" onClick="Ui.backButton(0)">
               <span class="arrow arrow-left" ></span>
             </div>
             <h2 class="title, text-center">
@@ -30,13 +30,13 @@
             <h4 class="text-center" style="margin-top: 70px;">
             Give the number of choices:
             </h4>
-            <input type="number" id="numberOfChoicesText" style="text-align: center;"> 
+            <input type="number" id="numberOfChoicesText" style="text-align: center;  border-bottom: 1px solid #000;"> 
             <div class="btn-div">
                 <button class="changeButton" onClick="goToNextAndSaveData(2)" style="margin-top: 50px;">Next</button>
             </div>
           </div>
           <div id="choices">
-            <div class="topRight" onClick="Ui.changeViewModeTo(1)">
+            <div class="topRight hide" onClick="Ui.backButton(1)">
               <span class="arrow arrow-left" ></span>
             </div>
             <h2 class="title, text-center">
@@ -46,7 +46,7 @@
               <ol id="listChoice">
                 <label>name:</label>
                 <li> 
-                  <input type="text">
+                  <input type="text" style="text-align: center;  border-bottom: 1px solid #000;">
                 </li>
               </ol>
             </form>
@@ -55,7 +55,7 @@
             </div>
           </div>
           <div id="weightNumber">
-            <div class="topRight" onClick="Ui.changeViewModeTo(2)">
+            <div class="topRight hide" onClick="Ui.backButton(2)">
               <span class="arrow arrow-left" ></span>
             </div>
             <h2 class="title, text-center">
@@ -65,16 +65,16 @@
             <h4 class="text-center" style="margin-top: 70px;">
             Give the number of decision makers:
             </h4>
-            <input type="number" id="numberOfDmsText" style="text-align: center;"> 
+            <input type="number" id="numberOfDmsText" style="text-align: center;   border-bottom: 1px solid #000;"> 
              <h4 class="text-center" style="margin-top: 20px;">
             Give the number of criteria:
             </h4>
-            <input type="number" id="numberOfCriteriaText" style="text-align: center;"> 
+            <input type="number" id="numberOfCriteriaText" style="text-align: center;  border-bottom: 1px solid #000;"> 
             <button class="changeButton" onClick="goToNextAndSaveData(4)">Next
             </button>
           </div>
           <div id="critiria">
-            <div class="topRight" onClick="Ui.changeViewModeTo(3)">
+            <div class="topRight hide" onClick="Ui.backButton(3)">
               <span class="arrow arrow-left" ></span>
             </div>
            <h2 class="title, text-center">Critiria</h2>
@@ -87,7 +87,7 @@
            </button>
           </div>
           <div id="matrix">
-            <div class="topRight" onClick="Ui.changeViewModeTo(4)">
+            <div class="topRight hide" onClick="Ui.backButton(4)">
               <span class="arrow arrow-left" ></span>
             </div>
           <h2 class="title, text-center">Initialize Matrix</h2>
@@ -100,7 +100,7 @@
            </button>
           </div>
           <div id="result">
-            <div class="topRight" onClick="Ui.changeViewModeTo(5)">
+            <div class="topRight hide" onClick="Ui.backButton(5)">
               <span class="arrow arrow-left" ></span>
             </div>
             <h2 class="title, text-center">

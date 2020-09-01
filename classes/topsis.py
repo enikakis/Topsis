@@ -1,11 +1,15 @@
 import numpy as np
 
+# This class emplements the Topsis and Group-Topsis Method
+
 
 class Topsis:
     euclidean_dist_best = []
     euclidean_dist_worst = []
     performance_score = []
     __nrml_dec_matrix = []
+# For group topsis to work:
+# group_topsis_mode=true and weight_array must have at least 2 dimensions
 
     def __init__(self, value_matrix, weight_array, better_max, group_topsis_mode=False):
         value_matrix = np.array(value_matrix, dtype=float)
@@ -19,22 +23,29 @@ class Topsis:
         for i in range(len(weight_array)):
             self.__topsis_method(
                 matrix, weight_array[i], better_max)
-        length = len(self.euclidean_dist_best)
-        print(self.euclidean_dist_best)
-        print(length)
-        gr_pos = np.zeros(len(self.euclidean_dist_best[0]))
-        gr_neg = np.zeros(len(self.euclidean_dist_best[0]))
-        for i in range(len(self.euclidean_dist_best[0])):
+        self.performance_score = self.topsis_group_method(
+            self.euclidean_dist_best, self.euclidean_dist_worst)
+# group topsis function
+
+    def topsis_group_method(self, my_dist_best, my_dist_worst):
+        length = len(my_dist_best)
+        dist_best = np.array(my_dist_best, dtype=float)
+        dist_worst = np.array(my_dist_worst, dtype=float)
+        gr_pos = np.zeros(len(dist_best[0]))
+        gr_neg = np.zeros(len(dist_best[0]))
+        elements = len(dist_best[0])
+        dms = length
+        for i in range(elements):
             pos = 1
             neg = 1
-            for a in range(length):
-                pos = pos * self.euclidean_dist_best[a][i]
-                neg = neg * self.euclidean_dist_worst[a][i]
+            for a in range(dms):
+                pos = pos * dist_best[a][i]
+                neg = neg * dist_worst[a][i]
 
-            gr_pos[i] = pow(pos, 1/length)
-            gr_neg[i] = pow(neg, 1 / length)
-        print(gr_pos, gr_neg)
-        self.performance_score = self.__get_performance_score(gr_pos, gr_neg)
+            gr_pos[i] = pow(pos, 1/dms)
+            gr_neg[i] = pow(neg, 1/dms)
+        return (gr_neg) / (
+            gr_pos + gr_neg)
 
     def __topsis_method(self, value_matrix, weight_array, better_max):
         if self.__nrml_dec_matrix == []:

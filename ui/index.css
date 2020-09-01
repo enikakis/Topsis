@@ -1,7 +1,14 @@
 
-
 /* General css */
+body {
+  width: 100%;
+   height: 100%;
+    min-width: 620px; 
+    min-height: 720px;
+}
 .container {
+    max-width: 600px;
+    max-height: 700px;
     min-width: 370px;
     min-height: 540px;
     background-color: rgb(252,185,0);
@@ -11,6 +18,7 @@
     resize: both;
     overflow: auto;
     padding-top: 20px;
+    padding-bottom: 20px;
     padding-right: 15px;
     padding-left: 15px;
     position: absolute;
@@ -40,7 +48,6 @@
 
   .container input[type="text"], input[type="number"], input[type="password"] {
     border: none;
-    border-bottom: 1px solid #000;
     background: transparent;
     outline: none;
     height: 30px;
@@ -170,7 +177,6 @@
 
 .tableClass {
   border-collapse: collapse;
-  margin: 0px auto;
   border: 1px solid black;
 }
 
@@ -179,6 +185,8 @@
   border-bottom: none;
   font-size: 10px;
   border: none;
+  min-width: 40px;
+  min-height: 20px;
 }
 
 table, td {
@@ -224,4 +232,17 @@ ul li {
 .arrow:hover {
   border-top: 2px solid #fff;
   border-right: 2px solid #fff;
+}
+
+.inPutFix {
+  display: inline-block;
+  width: 100px;
+  position: relative;
+  left: 50%;
+  margin-left: -50px;
+  
+}
+
+.hide {
+  display: none;
 }
